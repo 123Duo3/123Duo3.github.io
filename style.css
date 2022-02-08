@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+ul.banner {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fafafa;
+}
+
+ul.banner li {
+    float: left;
+}
+
+ul.banner li a {
+    display: block;
+    padding: 14px 16px;
+    color: #000000d0;
+    text-align: center;
+    text-decoration: none;
+}
+
+ul.banner li a:hover:not(.active) {
+    background-color: #eeeeee;
+}
+
+ul.banner li a.active {
+    color: #ffffffd0;
+    background-color: #1e88e5;
+}
+
+ul.banner li a.active:hover {
+    background-color: #2196f3;
+}
+
+ul.banner li.right {
+    float: right;
+}
+
+@media screen and (max-width: 600px){
+    ul.banner li.right, 
+    ul.banner li {float: none;}
+}
