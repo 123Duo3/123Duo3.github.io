@@ -8,7 +8,7 @@ subtitle: ''
 description: 这里什么都没有
 keywords: design code graphic
 author: 123Duo3
-language: zh
+language: zh-cn
 timezone: Asia/Shanghai
 
 # URL
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hexo-theme-nothin-here
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

@@ -1,0 +1,199 @@
+:root
+  --color alpha(#000, 0.87)
+  --color-secondary alpha(#000, 0.6)
+  --color-tertiary alpha(#000, 0.4)
+  --hover alpha(#000, 0.04)
+  --active alpha(#FFF, 0.25)
+  --background #F7F8FB
+  --background-transparent #F7F8FB99
+  --item-background alpha(#FFF, 0.8)
+  --item-background-hover alpha(#FFF, 0.9)
+  --stroke alpha(#000, 0.05)
+@media (prefers-color-scheme: dark)
+  :root
+    --color alpha(#FFF, 0.87)
+    --color-secondary alpha(#FFF, 0.6)
+    --color-tertiary alpha(#FFF, 0.4)
+    --hover alpha(#FFF, 0.04)
+    --active alpha(#000, 0.1)
+    --background #1D1E1F
+    --background-transparent #1D1E1F1A
+    --item-background alpha(#FFF, 0.1)
+    --item-background-hover alpha(#FFF, 0.2)
+    --stroke alpha(#FFF, 0.05)
+
+@font-face 
+  font-family: InterVariable
+  src: url(../fonts/InterVariable.woff2) format("woff2")
+  font-style: normal
+
+@font-face
+  font-family: InterVariable
+  src: url(../fonts/InterVariable-Italic.woff2) format("woff2")
+  font-style: italic
+
+@font-face
+  font-family: MiSans
+  src: url(../fonts/MiSans-Normal.woff2) format("woff2")
+  font-style: normal
+  font-weight: normal
+
+@font-face
+  font-family: MiSans
+  src: url(../fonts/MiSans-Bold.woff2) format("woff2")
+  font-style: normal
+  font-weight: bold
+
+@font-face
+  font-family: MiSans
+  src: url(../fonts/MiSans-Demibold.woff2) format("woff2")
+  font-style: normal
+  font-weight: 500
+
+
+
+body
+  margin 0
+  //overflow-y: hidden
+  color: var(--color)
+  background-color: var(--background)
+  font-family: InterVariable, MiSans, system-ui, -apple-system, BlinkMacSystemFont, sans-serif
+
+h1 
+  font-weight: 500
+
+h2
+  font-size: 2em
+  line-height: 1.5em
+  font-weight: 500
+  margin: 0
+
+.text-meta
+  font-size: 1em
+  line-height: 1.25em
+  font-weight: 500
+  
+
+.tag
+  color: var(--color-tertiary)
+
+.excerpt
+  color: var(--color-secondary)
+
+
+
+.material-symbols-outlined 
+  //color: var(--color-secondary)
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  user-select: none
+
+
+
+.header-outer
+  position: fixed
+  top: 0
+  left: 0
+  width 256px
+  height: 100%
+  z-index: 100
+  background-color: var(--background-transparent)
+  box-sizing: border-box
+  backdrop-filter: blur(64px)
+
+.header-inner
+  padding: 36px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: calc(100% - 72px)
+
+.logo-large
+  margin-top: 28px
+  user-select none
+  text-decoration: none
+  border-radius: 8px
+  -webkit-border-radius: 8
+  -moz-border-radius: 8
+
+.icon-button
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 48px
+  height: 48px
+  margin-top: 12px
+  cursor: pointer
+  background: alpha(#fff, 0)
+  text-decoration: none
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  color: var(--color-secondary)
+  &:hover
+    background: var(--hover)
+    color: var(--color)
+  &:active
+    background: var(--active)
+  &:focus
+    box-shadow: inset 0 0 0 2px var(--color)
+  border-radius: 8px
+  -webkit-border-radius: 8
+  -moz-border-radius: 8
+  border: none
+  outline: none
+
+.content
+  padding: 24px
+  height: calc(100vh - 48px - var(--scrollbar-height))
+  display: flex
+  flex-direction: row
+
+.spacer
+  height: 100%
+  padding-left: calc(256px + 15%)
+
+.recent-posts
+  display: flex
+  flex-direction: row
+
+.recent-post-item-meta
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+
+.recent-post-item
+  text-decoration: none
+  color: var(--color)
+  margin-right: 24px
+  background: var(--item-background)
+  width 512px
+  border-radius: 24px
+  -webkit-border-radius: 24
+  -moz-border-radius: 24
+  padding: 16px
+  box-shadow: inset 0 0 0 1px var(--stroke), 0 0 16px alpha(#000, 0.01), 0 4px 8px alpha(#000, 0.01)
+  &:hover
+    background: var(--item-background-hover)
+    box-shadow: inset 0 0 0 1px var(--stroke), 0 0 48px alpha(#000, 0.02), 0 4px 32px alpha(#000, 0.02)
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.recent-post-item-text
+  margin-left: 8px
+  margin-right: 8px
+
+.small-icon
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  font-variation-settings: 'OPSZ' 20;
+  
+

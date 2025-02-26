@@ -1,0 +1,40 @@
+<% if (page.posts.length > 0) { %>
+  <div class="recent-posts">
+    <% page.posts.sort('date', -1).limit(100).each(post => { %>
+      <a class="recent-post-item" href="<%=url_for(post.path)%>">
+        <div class="recent-post-item-upper">
+          <div class = "recent-post-item-text">
+            <h2><%=post.title%></h2>
+          </div>
+        </div>
+        <div class="recent-post-item-lower">
+          <div class = "recent-post-item-text">
+            <div class="excerpt">
+              <%- post.excerpt.replace(/<a\b[^>]*>(.*?)<\/a>/gi, '<u>$1</u>') %>
+            </div>
+          </div>
+          <div class="recent-post-item-meta">
+            <div class = "recent-post-item-text">
+              <div class = "text-meta">
+                <time datetime="<%=post.date.toJSON()%>">
+                  <%= date(post.date, 'YYYY 年 M 月 D 日') %>
+                </time>
+                <% if (post.tags != undefined) { %>
+                  <span class="tag">
+                    <% post.tags.each(tag => { %>
+                      · <%= tag.name %>
+                    <% }); %>
+                  </span>
+                <% } %>
+              </div>
+            </div>
+            <span class="material-symbols-outlined">
+              <span class="small-icon">arrow_forward</span>
+            </span>
+          </span>
+          </div>    
+        </div>
+      </a>
+    <% }); %>
+  </div>
+<% } %>

@@ -1,0 +1,19 @@
+
+# html lang
+language: zh-cn
+
+# main menu navigation
+menu:
+  Home: /
+  Search: /search
+  Archives: /archives
+  RSS: /rss
+  About: /about
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/hexo-theme-nothin-here.css
+
+# scripts loaded in the end of the body
+scripts:
+- /js/hexo-theme-nothin-here.js
