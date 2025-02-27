@@ -16,13 +16,11 @@
           <div class="recent-post-item-meta">
             <div class = "recent-post-item-text">
               <div class = "text-meta">
-                <time datetime="<%=post.date.toJSON()%>">
-                  <%= date(post.date, 'YYYY 年 M 月 D 日') %>
-                </time>
-                <% if (post.tags != undefined) { %>
-                  <span class="tag">
-                    <% post.tags.each(tag => { %>
-                      · <%= tag.name %>
+                <time datetime="<%= post.date.toJSON() %>" class="post-date" data-date="<%= post.date %>"></time>
+                <% if (post.categories != undefined) { %>
+                  <span class="post-tag-separator">
+                    <% post.categories.each(category => { %>
+                      · <%= category.name %>
                     <% }); %>
                   </span>
                 <% } %>

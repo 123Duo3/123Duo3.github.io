@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+<style>
+#n {
+fill: #0e1116;
+opacity: .87;
+}
+#s {
+fill: #00182b;
+opacity: .1;
+}
+@media (prefers-color-scheme: dark) {
+#n {
+fill: #fdfeff;
+opacity: .82;
+}
+#s {
+fill: #c5f0ff;
+opacity: .12;
+}
+}
+</style>
+  <g id="n">
+    <rect x="592.18" y="273.11" width="130.33" height="196.46" style="stroke-width: 0px;"/>
+    <rect x="308.44" y="673.33" width="130.33" height="130.02" style="stroke-width: 0px;"/>
+    <polygon points="818.58 273.11 818.58 311.94 818.58 350.78 818.58 509.29 940.71 421.42 940.71 350.78 940.71 311.94 940.71 273.11 818.58 273.11" style="stroke-width: 0px;"/>
+    <polygon points="470.24 348.25 422.38 273.11 308.44 273.11 308.44 273.11 265.38 273.11 265.38 403.71 308.44 403.71 308.44 469.56 395.58 469.56 588.66 772.11 588.67 772.11 608.57 803.35 722.51 803.35 722.51 673.33 677.7 673.33 470.24 348.25" style="stroke-width: 0px;"/>
+  </g>
+  <g id="s">
+    <polygon points="395.58 469.56 308.44 469.56 0 469.56 0 673.33 308.44 673.33 438.77 673.33 525.62 673.33 395.58 469.56" style="stroke-width: 0px;"/>
+    <polygon points="873.8 469.56 818.58 509.29 818.58 469.56 722.51 469.56 592.18 469.56 547.66 469.56 677.7 673.33 722.51 673.33 1080 673.33 1080 469.56 873.8 469.56" style="stroke-width: 0px;"/>
+  </g>
+</svg>

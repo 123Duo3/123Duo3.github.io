@@ -54,19 +54,38 @@
 
 body
   margin 0
+  line-height: 1.5em
   //overflow-y: hidden
   color: var(--color)
   background-color: var(--background)
   font-family: InterVariable, MiSans, system-ui, -apple-system, BlinkMacSystemFont, sans-serif
 
+p
+  text-indent:2em
+
 h1 
-  font-weight: 500
+  font-size: 2em
+  font-weight: 400
+  line-height: 1.25em
+  margin: 0
 
 h2
   font-size: 2em
   line-height: 1.5em
-  font-weight: 500
+  font-weight: 400
   margin: 0
+
+blockquote
+  background: var(--hover)
+  padding-inline-start: 2em
+  padding-inline-end: 2em
+  padding-block-start: 0.1px
+  padding-block-end: 0.1px
+  border-radius: 8px
+  -webkit-border-radius: 8
+  -moz-border-radius: 8
+  margin: 0
+  color: var(--color-secondary)
 
 .text-meta
   font-size: 1em
@@ -74,11 +93,35 @@ h2
   font-weight: 500
   
 
-.tag
+.post-tag
   color: var(--color-tertiary)
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+    color: var(--color-secondary)
+  font-weight: 500
+
+.post-tag-separator
+  color: var(--color-tertiary)
+  font-weight: 500
+  user-select: none
+  -webkit-user-select: none
 
 .excerpt
   color: var(--color-secondary)
+
+.page-foot
+  color: var(--color)
+  font-weight: 500
+  height:calc(100% - var(--scrollbar-height))
+  break-inside:avoid
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  padding-left: 64px
+
+.first-space
+  height: 15vh
 
 
 
@@ -90,6 +133,7 @@ h2
     'GRAD' 0,
     'opsz' 24
   user-select: none
+  -webkit-user-select: none
 
 
 
@@ -111,9 +155,10 @@ h2
   justify-content: space-between
   height: calc(100% - 72px)
 
-.logo-large
+.logo
   margin-top: 28px
-  user-select none
+  user-select: none
+  -webkit-user-select: none
   text-decoration: none
   border-radius: 8px
   -webkit-border-radius: 8
@@ -197,3 +242,17 @@ h2
   font-variation-settings: 'OPSZ' 20;
   
 
+.post
+  columns 24em auto
+  gap: 64px
+  height: 100%
+  margin-right: 24px
+  orphans: 2
+
+.post-content
+  width: 24em
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  orphans: 2
+  
