@@ -3,12 +3,19 @@
   <div class="post-content">
     <div>
       <div class="first-space"></div>
-      <%-page.content.replace(/<\/p>/g, function(match, offset, string) {
-        if (string.lastIndexOf('</p>') === offset) {
-          return '<span style="color:#FF7300;user-select:none"> ●</span></p>';
+      <%- (() => {
+        let content = page.content;
+        if ((!content.endsWith('</p>\n')) || content.endsWith('\"></p>\n')) {
+          content += '<p style="text-align:right;user-select:none"></p>';
         }
-        return match;
-      })%>
+        content = content.replace(/<\/p>/g, function(match, offset, string) {
+          if (string.lastIndexOf('</p>') === offset) {
+            return '<span style="color:#FF7300;user-select:none"> ●</span></p>';
+          }
+          return match;
+        });
+        return content;
+      })() %>
     </div>
   </div>
   <div class="page-foot">

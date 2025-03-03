@@ -7,8 +7,9 @@
   --background #F7F8FB
   --background-transparent #F7F8FB99
   --item-background alpha(#FFF, 0.8)
-  --item-background-hover alpha(#FFF, 0.9)
+  --item-background-hover alpha(#FFF, 0.97)
   --stroke alpha(#000, 0.05)
+  --horizontal-line alpha(#000, 0.1)
 @media (prefers-color-scheme: dark)
   :root
     --color alpha(#FFF, 0.87)
@@ -18,9 +19,10 @@
     --active alpha(#000, 0.1)
     --background #1D1E1F
     --background-transparent #1D1E1F1A
-    --item-background alpha(#FFF, 0.1)
-    --item-background-hover alpha(#FFF, 0.2)
+    --item-background alpha(#FFF, 0.05)
+    --item-background-hover alpha(#FFF, 0.15)
     --stroke alpha(#FFF, 0.05)
+    --horizontal-line alpha(#FFF, 0.1)
 
 @font-face 
   font-family: InterVariable
@@ -68,12 +70,57 @@ h1
   font-weight: 400
   line-height: 1.25em
   margin: 0
+  padding: 0
 
 h2
   font-size: 2em
   line-height: 1.5em
   font-weight: 400
   margin: 0
+  padding-block-start: 1em
+  padding-block-end: 0em
+
+h3
+  font-size: 1.5em
+  line-height: 1.5em
+  font-weight: 500
+  margin: 0
+  padding-block: 0.5em
+
+h4
+  font-size: 1.25em
+  font-weight: 500
+  margin: 0
+  padding-block: 0.5em
+
+h5
+  font-size: 1em
+  line-height: 2em
+  font-weight: 700
+  margin: 0
+  padding: 0
+
+h6
+  font-size: 0.875em
+  line-height: 2em
+  font-weight: 700
+  margin: 0
+  padding: 0
+
+strong
+  font-weight: 700
+  color: var(--color)
+
+a
+  color: var(--color)
+  &:hover
+    color: var(--color-secondary)
+
+hr
+  border: none
+  border-top: 1.5px solid var(--horizontal-line)
+  margin: 0
+  padding: 0
 
 blockquote
   background: var(--hover)
@@ -86,6 +133,42 @@ blockquote
   -moz-border-radius: 8
   margin: 0
   color: var(--color-secondary)
+
+figure
+  margin: 0
+  padding: 0
+
+p img
+  max-width: 100%
+  height: auto
+  max-height: calc(100vh - 48px - var(--scrollbar-height))
+  border-radius: 8px
+  -webkit-border-radius: 8
+  -moz-border-radius: 8
+  margin: 0
+  display: block
+
+blockquote footer
+  text-align: right
+  padding-block: 1em
+  width 100%
+
+blockquote footer strong
+  font-weight: 500
+  color: var(--color)
+
+blockquote footer cite
+  font-style: normal
+  font-weight: 500
+  padding-inline-start: 0.5em
+  color: var(--color-secondary)
+
+blockquote footer cite a
+  color: var(--color-secondary)
+  &:hover
+    color: var(--color)
+  line-break: anywhere
+
 
 .text-meta
   font-size: 1em
@@ -225,11 +308,15 @@ blockquote
   padding: 16px
   box-shadow: inset 0 0 0 1px var(--stroke), 0 0 16px alpha(#000, 0.01), 0 4px 8px alpha(#000, 0.01)
   &:hover
+    color: var(--color)
     background: var(--item-background-hover)
     box-shadow: inset 0 0 0 1px var(--stroke), 0 0 48px alpha(#000, 0.02), 0 4px 32px alpha(#000, 0.02)
   display: flex
   flex-direction: column
   justify-content: space-between
+  & h2
+    margin: 0
+    padding: 0
 
 .recent-post-item-text
   margin-left: 8px
