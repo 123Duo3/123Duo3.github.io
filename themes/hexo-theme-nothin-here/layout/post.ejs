@@ -1,30 +1,41 @@
-
 <article class="post">
   <div class="post-content">
     <div>
       <div class="first-space"></div>
-      <%- (() => {
+      <%- (()=> {
         let content = page.content;
+        content = content.replace(/<td class="code"><pre>([\s\S]*?)<\/pre><\/td>/g, function(match, codeContent) {
+          let lines = codeContent.split(`<span class="line">`);
+          lines.shift();
+          lines = lines.map((line, index) => {
+            let lineNumber = (index + 1).toString().padStart(3, ' ');
+            return `<span class="line-numbers">${lineNumber}</span><span class="line">${line}`;
+          });
+          return `<td class="code"><pre>${lines.join('')}</pre></td>`;
+        });
+
+        
+
         if ((!content.endsWith('</p>\n')) || content.endsWith('\"></p>\n')) {
-          content += '<p style="text-align:right;user-select:none"></p>';
+        content += '<p style="text-align:right;user-select:none"></p>';
         }
         content = content.replace(/<\/p>/g, function(match, offset, string) {
           if (string.lastIndexOf('</p>') === offset) {
-            return '<span style="color:#FF7300;user-select:none"> ●</span></p>';
+          return '<span style="color:#FF7300;user-select:none"> ●</span></p>';
           }
           return match;
-        });
-        return content;
-      })() %>
+          });
+          return content;
+          })() %>
     </div>
   </div>
   <div class="page-foot">
-    <% page.tags.each(tag => { %>
+    <% page.tags.each(tag=> { %>
       <a class="post-tag" href="<%=url_for(tag.path)%>">
         #<%= tag.name %><br>
       </a>
-    <% }); %>
-    <span>文 / <%=config.author%></span>
+      <% }); %>
+        <span>文 / <%=config.author%></span>
   </div>
 </article>
 

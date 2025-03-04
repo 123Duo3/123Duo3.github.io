@@ -1,0 +1,136 @@
+:root {
+    --color-formula: #747d4d;
+    --color-comment: #9a9a9a;
+    --color-tag: #747e5b;
+    --color-subst: #708242;
+    --color-operator: #678334;
+    --color-bullet: #688538;
+    --color-symbol: #628e3c;
+    --color-title: #50943f;
+    --color-strong: #448b3f;
+    --color-code: #36864e;
+    --color-built_in: #2c8452;
+    --color-function: #588571;
+    --color-type: #30895a;
+    --color-emphasis: #2d8567;
+    --color-meta: #2b8074;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    --color-formula: #c4c5b4;
+    --color-comment: #646464;
+    --color-tag: #b8be9e;
+    --color-subst: #c4d0ac;
+    --color-operator: #abb498;
+    --color-bullet: #aabe9c;
+    --color-symbol: #98b88f;
+    --color-title: #89978b;
+    --color-strong: #93c191;
+    --color-code: #a6c7b0;
+    --color-built_in: #81a08f;
+    --color-function: #a3ccba;
+    --color-type: #8aab99;
+    --color-emphasis: #a4cabf;
+    --color-meta: #80a4a0;
+    }
+}
+
+.line .formula,
+.line .params,
+.line .property {
+    color: var(--color-formula);
+}
+
+.line .comment {
+    color: var(--color-comment);
+}
+
+.line .tag {
+    color: var(--color-tag);
+}
+
+.line .subst,
+.line .punctuation,
+.line .operator {
+    color: var(--color-subst);
+}
+
+.line .operator {
+    opacity: 0.7;
+}
+
+.line .bullet,
+.line .variable,
+.line .template-variable,
+.line .selector-tag,
+.line .name,
+.line .deletion {
+    color: var(--color-bullet);
+}
+
+.line .symbol,
+.line .number,
+.line .link,
+.line .attr,
+.line .variable.constant_,
+.line .literal {
+    color: var(--color-symbol);
+}
+
+.line .title,
+.line .class .line .title,
+.line .title.class_ {
+    color: var(--color-title);
+}
+
+.line .strong {
+    font-weight: bold;
+    color: var(--color-strong);
+}
+
+.line .code,
+.line .addition,
+.line .title.class_.inherited__,
+.line .string {
+    color: var(--color-code);
+}
+
+.line .built_in,
+.line .doctag,
+.line .quote,
+.line .keyword.line .atrule,
+.line .regexp {
+    color: var(--color-built_in);
+}
+
+.line .function .line .title,
+.line .attribute,
+.ruby .line .property,
+.line .title.function_,
+.line .section {
+    color: var(--color-function);
+}
+
+.line .type,
+.line .template-tag,
+.diff .line .meta,
+.line .keyword {
+    color: var(--color-type);
+}
+
+.line .emphasis {
+    color: var(--color-emphasis);
+    font-style: italic;
+}
+
+.line .meta,
+.line .meta .line .keyword,
+.line .meta .line .string {
+    color: var(--color-meta);
+}
+
+.line .meta .line .keyword,
+.line .meta-keyword {
+    font-weight: bold;
+}

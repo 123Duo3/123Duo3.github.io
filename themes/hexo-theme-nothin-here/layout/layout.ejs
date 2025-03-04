@@ -6,7 +6,8 @@ if (is_tag()) pageTitle = '标签 — ' + page.tag + ' — ';
 if (is_category()) pageTitle = '分类 — ' + page.category + ' — ';
 if (is_month()) pageTitle += page.month + '月' + ' — ';
 if (is_year()) pageTitle += page.year + ' — ';
-pageTitle += ' — ' + config.title;
+if (page.title) pageTitle += ' — ';
+pageTitle += config.title;
 %>
 
 <!DOCTYPE html>
@@ -16,7 +17,6 @@ pageTitle += ' — ' + config.title;
   <meta name="viewport" content="height=device-height,initial-scale=1" />
   <link rel="icon" href="/assets/favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back,arrow_forward,inbox_text,info,rss_feed,search" />
   <title><%=pageTitle%></title>
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from _config.yml -->
@@ -25,16 +25,6 @@ pageTitle += ' — ' + config.title;
     <% }); %>
   <% } %>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPJQ9Y16KX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TPJQ9Y16KX');
-</script>
 
 <body>
 
@@ -55,6 +45,12 @@ pageTitle += ' — ' + config.title;
       <% if (page.title != undefined) { %>
         <div style="padding-left:10px">
           <div style="height:64px"></div>
+          <div>
+            <time datetime="<%= page.date.toJSON() %>" class="post-date" data-date="<%= page.date %>"></time>
+          </div>
+          <div style="height:4px"></div>
+          <h1><%=page.title%></h1>
+          <div style="height:4px"></div>
           <% if (page.categories != undefined) { %>
             <% page.categories.each((category, index) => { %>
               <a class="post-tag" href="<%=url_for(category.path)%>">
@@ -65,11 +61,6 @@ pageTitle += ' — ' + config.title;
               <% } %>
             <% }); %>
           <% } %>
-          <div class="post-tag">
-            <time datetime="<%= page.date.toJSON() %>" class="post-date" data-date="<%= page.date %>"></time>
-          </div>
-          <div style="height:4px"></div>
-          <h1><%=page.title%></h1>
         </div>
       <% } %>
     </div>
@@ -79,7 +70,7 @@ pageTitle += ' — ' + config.title;
         <% buttons = [
           { icon: '&#xE8B6;', tooltip: '搜索', link: '/search' },
           { icon: '&#xF399;', tooltip: '归档', link: '/archives' },
-          { icon: '&#xE0E5;', tooltip: 'RSS', link: '/rss' },
+          { icon: '&#xE0E5;', tooltip: 'RSS', link: '/atom.xml' },
           { icon: '&#xE88E;', tooltip: '关于', link: '/about' }
         ]; %>
       <% } else { %>

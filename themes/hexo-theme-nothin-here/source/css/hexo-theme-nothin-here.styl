@@ -9,6 +9,7 @@
   --item-background alpha(#FFF, 0.8)
   --item-background-hover alpha(#FFF, 0.97)
   --stroke alpha(#000, 0.05)
+  --stroke-solid #dde2e4
   --horizontal-line alpha(#000, 0.1)
 @media (prefers-color-scheme: dark)
   :root
@@ -22,6 +23,7 @@
     --item-background alpha(#FFF, 0.05)
     --item-background-hover alpha(#FFF, 0.15)
     --stroke alpha(#FFF, 0.05)
+    --stroke-solid #323437
     --horizontal-line alpha(#FFF, 0.1)
 
 @font-face 
@@ -52,6 +54,30 @@
   font-style: normal
   font-weight: 500
 
+@font-face
+  font-family: JetBrainsMono
+  src: url(../fonts/JetBrainsMono-Regular.woff2) format("woff2")
+  font-style: normal
+  font-weight: normal
+
+@font-face
+  font-family: JetBrainsMono
+  src: url(../fonts/JetBrainsMono-Bold.woff2) format("woff2")
+  font-style: normal
+  font-weight: bold
+
+@font-face
+  font-family: JetBrainsMono
+  src: url(../fonts/JetBrainsMono-Italic.woff2) format("woff2")
+  font-style: italic
+  font-weight: normal
+
+@font-face
+  font-family: JetBrainsMono
+  src: url(../fonts/JetBrainsMono-BoldItalic.woff2) format("woff2")
+  font-style: italic
+  font-weight: bold
+
 
 
 body
@@ -77,21 +103,21 @@ h2
   line-height: 1.5em
   font-weight: 400
   margin: 0
-  padding-block-start: 1em
-  padding-block-end: 0em
+  margin-block-start: 1em
+  margin-block-end: 0em
 
 h3
   font-size: 1.5em
   line-height: 1.5em
   font-weight: 500
   margin: 0
-  padding-block: 0.5em
+  margin-block: 0.5em
 
 h4
   font-size: 1.25em
   font-weight: 500
   margin: 0
-  padding-block: 0.5em
+  margin-block: 0.5em
 
 h5
   font-size: 1em
@@ -107,10 +133,6 @@ h6
   margin: 0
   padding: 0
 
-strong
-  font-weight: 700
-  color: var(--color)
-
 a
   color: var(--color)
   &:hover
@@ -124,14 +146,13 @@ hr
 
 blockquote
   background: var(--hover)
-  padding-inline-start: 2em
-  padding-inline-end: 2em
-  padding-block-start: 0.1px
-  padding-block-end: 0.1px
   border-radius: 8px
   -webkit-border-radius: 8
   -moz-border-radius: 8
-  margin: 0
+  margin-block: 1em
+  margin-inline: 0
+  padding-inline: 2em
+  padding-block: 0.1em
   color: var(--color-secondary)
 
 figure
@@ -167,7 +188,79 @@ blockquote footer cite a
   color: var(--color-secondary)
   &:hover
     color: var(--color)
-  line-break: anywhere
+  overflow-wrap: anywhere
+
+blockquote p a
+  color: var(--color-secondary)
+  &:hover
+    color: var(--color)
+
+ol, ul
+  padding-inline-start: 2em
+
+ul
+  list-style-type: disc
+
+ol p, ul p
+  text-indent: 0
+
+ol p + p, ul p + p
+  text-indent: 2em
+
+li::marker
+  color: var(--color-tertiary)
+
+kbd
+  padding-inline: 0.25em
+  border-radius: 4px
+  -webkit-border-radius: 4
+  -moz-border-radius: 4
+  color: var(--color-secondary)
+  font-family: JetBrainsMono, monospace
+  font-size: 0.875em
+  line-height: 1.25em
+  font-weight: 500
+  border: 1.5px solid var(--horizontal-line)
+
+code
+  padding-inline: 0.5em
+  color: var(--color-secondary)
+  font-family: JetBrainsMono, monospace
+  font-size: 0.875em
+  line-height: 1.25em
+  font-weight: 500
+  border-radius: 4px
+  -webkit-border-radius: 4
+  -moz-border-radius: 4
+  background: var(--hover)
+
+table
+  width: 100%
+  border-collapse: collapse
+  border-radius: 8px
+  -webkit-border-radius: 8
+  -moz-border-radius: 8
+  box-shadow: inset 0 0 0 1.5px var(--stroke-solid)
+  overflow: hidden
+  margin-block: 1em
+
+th, td
+  padding: 0.5em
+  border-right: 1.5px solid var(--stroke-solid)
+  border-collapse: collapse
+
+td
+  border-top: 1.5px solid var(--stroke-solid)
+
+td:last-child, th:last-child
+  border-right-color: transparent;
+
+th
+  background: var(--hover)
+  font-weight: 500
+  text-align: left
+  
+
 
 
 .text-meta
@@ -189,6 +282,10 @@ blockquote footer cite a
   font-weight: 500
   user-select: none
   -webkit-user-select: none
+
+.post-date
+  color: var(--color-tertiary)
+  font-weight: 500
 
 .excerpt
   color: var(--color-secondary)
@@ -342,4 +439,51 @@ blockquote footer cite a
   flex-direction: column
   justify-content: space-between
   orphans: 2
+
+
+
+.highlight
+  background: var(--hover)
+  padding-inline-start: 1em
+  padding-inline-end: 1em
+  border-radius: 8px
+  -webkit-border-radius: 8
+  -moz-border-radius: 8
+  margin-block: 1em
+
+.highlight table 
+  border-collapse: separate
+  border: none
+  border-radius: 0
+  -webkit-border-radius: 0
+  -moz-border-radius: 0
+  overflow: visible
+  box-shadow: none
+
+.highlight table th, .highlight table td
+  border: none
+  padding: 0
+  border-collapse: separate
+
+.gutter
+  padding-inline-end: 1em
+  color: var(--color-tertiary)
+
+pre
+  white-space: pre-wrap
+  word-wrap: break-word    
+  overflow-wrap: anywhere
+  line-break: loose
+  font-family: 'JetBrainsMono', monospace
+  font-feature-settings: "ss01", "cv03", "zero"
+  font-size: 0.875em
+  letter-spacing: inherit
+  color: var(--color-secondary)
   
+.line-numbers
+  display: inline-block
+  text-indent: -4em
+  color: var(--horizontal-line)
+  user-select: none
+  -webkit-user-select: none
+
