@@ -7,7 +7,7 @@ title: NOTHIN’ HERE
 subtitle: ''
 description: 这里什么都没有
 keywords: design code graphic
-author: 123Duo3
+author: 123哆3
 language: zh-cn
 timezone: Asia/Shanghai
 
@@ -92,6 +92,21 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+
+# Feed
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content: true
+  content_limit: 
+  content_limit_delim: ' '
+  order_by: -date
+  icon: assets/apple-touch-icon.png
+  autodiscovery: true
+  template:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
