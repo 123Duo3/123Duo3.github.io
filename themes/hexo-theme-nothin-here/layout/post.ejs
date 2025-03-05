@@ -2,31 +2,59 @@
   <div class="post-content">
     <div>
       <div class="first-space"></div>
+      <div class="post-title-mobile">
+        <% if (page.title != undefined) { %>
+          <div style="height:48px"></div>
+          <div>
+            <% if (page.categories.length != 0) { %>
+              <span class="text-meta">
+                <time datetime="<%= page.date.toJSON() %>" class="post-date" data-date="<%= page.date %>"></time>
+                <% page.categories.each((category, index) => { %>
+                  <span class="post-tag-separator"> · </span>
+                  <a class="post-tag" href="<%=url_for(category.path)%>">
+                    <%= category.name %>
+                  </a>
+                <% }); %>
+              </span>
+            <% } else { %>
+              <time datetime="<%= page.date.toJSON() %>" class="post-date" data-date="<%= page.date %>"></time>
+            <% } %>
+          </div>
+          <div style="height:4px"></div>
+          <h1><%=page.title%></h1>
+          <div style="height:32px"></div>
+        <% } %>
+      </div>
       <%- (()=> {
         let content = page.content;
         content = content.replace(/<td class="code"><pre>([\s\S]*?)<\/pre><\/td>/g, function(match, codeContent) {
           let lines = codeContent.split(`<span class="line">`);
           lines.shift();
-          lines = lines.map((line, index) => {
-            let lineNumber = (index + 1).toString().padStart(3, ' ');
-            return `<span class="line-numbers">${lineNumber}</span><span class="line">${line}`;
-          });
+          if (lines.length > 1) {
+            lines = lines.map((line, index) => {
+              let lineNumber = (index + 1).toString().padStart(3, ' ');
+              return `<span class="line-numbers">${lineNumber}</span><span class="line">${line}`;
+            });
+          } else {
+            lines = lines.map((line, index) => {
+              return `<span class="line">${line}`;
+            });
+          }
           return `<td class="code"><pre>${lines.join('')}</pre></td>`;
         });
 
-        
-
         if ((!content.endsWith('</p>\n')) || content.endsWith('\"></p>\n')) {
-        content += '<p style="text-align:right;user-select:none"></p>';
+        content += '<p class="end-mark"></p>';
         }
+
         content = content.replace(/<\/p>/g, function(match, offset, string) {
           if (string.lastIndexOf('</p>') === offset) {
           return '<span style="color:#FF7300;user-select:none"> ●</span></p>';
           }
           return match;
-          });
-          return content;
-          })() %>
+        });
+        return content;
+        })() %>
     </div>
   </div>
   <div class="page-foot">
