@@ -19,3 +19,7 @@ stylesheets:
 # scripts loaded in the end of the body
 scripts:
 - /js/hexo-theme-nothin-here.js
+
+# default thumbnail
+default_thumbnail:
+- /source/assets/banner.png
