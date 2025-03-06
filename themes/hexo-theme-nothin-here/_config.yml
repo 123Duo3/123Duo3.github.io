@@ -22,4 +22,4 @@ scripts:
 
 # default thumbnail
 default_thumbnail:
-- /source/assets/banner.png
+- /assets/banner.png
