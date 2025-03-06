@@ -28,16 +28,20 @@
       <%- (()=> {
         let content = page.content;
         content = content.replace(/<td class="code"><pre>([\s\S]*?)<\/pre><\/td>/g, function(match, codeContent) {
-          let lines = codeContent.split(`<span class="line">`);
+          let lines = codeContent.split(/<span class="line/);
           lines.shift();
           if (lines.length > 1) {
             lines = lines.map((line, index) => {
               let lineNumber = (index + 1).toString().padStart(3, ' ');
-              return `<span class="line-numbers">${lineNumber}</span><span class="line">${line}`;
+              let lineNumberMarked =''
+              if (line.includes(` marked">`)) {
+                lineNumberMarked = ' marked'
+              }
+              return `<div class="code-line${lineNumberMarked}"><span class="line-numbers${lineNumberMarked}">${lineNumber}</span><span class="line${line}</div>`;
             });
           } else {
             lines = lines.map((line, index) => {
-              return `<span class="line">${line}`;
+              return `<div class="code-line"><span class="line-numbers first">  1</span><span class="line${line}</div>`;
             });
           }
           return `<td class="code"><pre>${lines.join('')}</pre></td>`;

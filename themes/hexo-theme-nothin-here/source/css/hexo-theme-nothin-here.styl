@@ -560,8 +560,6 @@ th
 
 .highlight
   background: var(--hover)
-  padding-inline-start: 1em
-  padding-inline-end: 1em
   border-radius: 8px
   -webkit-border-radius: 8
   -moz-border-radius: 8
@@ -585,6 +583,15 @@ th
   padding-inline-end: 1em
   color: var(--color-tertiary)
 
+figcaption
+  font-size: 0.75em
+  font-weight: 600
+  padding-block-start: 8px
+  padding-inline-start: 2.5em
+  margin-block-end: -2em
+  letter-spacing: .01em
+  
+
 pre
   white-space: pre-wrap
   word-wrap: break-word    
@@ -598,14 +605,28 @@ pre
   
 .line-numbers
   display: inline-block
-  text-indent: -4em
+  text-indent: -4.5em
   color: var(--horizontal-line)
   user-select: none
   -webkit-user-select: none
+  &.marked
+    color: var(--color-tertiary)
+  &.first
+    display: none
+
+.code-line
+  margin-inline: -2px
+  padding-inline: calc(2em + 2px)
+
+.code-line.marked
+  background: var(--horizontal-line)
 
 @media (max-width: 768px) 
-  pre
-    padding-inline-start: 1.75em
+  .code-line
+    padding-inline-start: calc(3em + 2px)
+    padding-inline-end: calc(1em + 2px)
   .line-numbers
     text-indent: -3em
+    &.first
+      display: inline-block
 
