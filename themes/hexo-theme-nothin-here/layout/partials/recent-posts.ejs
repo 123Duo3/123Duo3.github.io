@@ -1,3 +1,39 @@
+<%
+function gatherTextStats(articleBody) {
+  if (!articleBody) return { mainTextCount: 0, codeLineCount: 0 };
+  const preBlockRegex = /<pre>([\s\S]*?)<\/pre>/gi, preBlocks = [];
+  let match;
+  while ((match = preBlockRegex.exec(articleBody)) !== null) {
+    preBlocks.push(match[1]);
+  }
+  let codeLineCount = 0;
+  preBlocks.forEach(block => {
+    const lineMatches = block.match(/<div[^>]*class=["'][^"']*code-line[^"']*["'][^>]*>/gi);
+    if (lineMatches) codeLineCount += lineMatches.length;
+    else {
+      const blockWithNewlines = block.replace(/<br\s*\/?>/gi, '\n'),
+            lines = blockWithNewlines.split(/\r?\n/).filter(line => line.trim() !== '');
+      codeLineCount += lines.length;
+    }
+  });
+  const textWithoutPre = articleBody.replace(/<pre>[\s\S]*?<\/pre>/gi, ''),
+        strippedText = textWithoutPre.replace(/<[^>]*>/g, ''),
+        chineseCount = (strippedText.match(/[\u4e00-\u9fa5]/g) || []).length,
+        englishCount = (strippedText.match(/\w+/g) || []).length,
+        digitCount = (strippedText.match(/\d+/g) || []).length,
+        mainTextCount = chineseCount + englishCount + digitCount;
+  return { mainTextCount, codeLineCount };
+}
+function calcReadingTime(articleBody) {
+  const { mainTextCount, codeLineCount } = gatherTextStats(articleBody),
+        textMinutes = mainTextCount / 250,
+        codeMinutes = codeLineCount / 20,
+        estimatedMinutes = Math.ceil(textMinutes + codeMinutes);
+  return `${estimatedMinutes}`;
+}
+%>
+
+
 <% if (page.posts.length > 0) { %>
   <div class="recent-posts">
     <% page.posts.sort('date', -1).limit(100).each(post => { %>
@@ -22,6 +58,11 @@
                     <% post.categories.each(category => { %>
                       · <%= category.name %>
                     <% }); %>
+                  </span>
+                <% } %>
+                <% if (post.content) { %>
+                  <span class="post-tag-separator">
+                  · 阅读 <%= calcReadingTime(post.content) %> 分钟
                   </span>
                 <% } %>
               </div>

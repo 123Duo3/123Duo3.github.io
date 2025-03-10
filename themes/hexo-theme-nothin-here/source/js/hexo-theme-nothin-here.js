@@ -54,8 +54,8 @@ const formatDate = function formatDate(postDate) {
     } else if (diffDays === 2) {
       return '前天';
     } else if (now.getFullYear() === postDate.getFullYear()) {
-      return `${postDate.getMonth() + 1} 月 ${postDate.getDate()} 日`;
+      return `${postDate.getMonth() + 1} 月 ${postDate.getDate()} 日`;
     } else {
-      return `${postDate.getFullYear()} 年 ${postDate.getMonth() + 1} 月 ${postDate.getDate()} 日`;
+      return `${postDate.getFullYear()} 年 ${postDate.getMonth() + 1} 月 ${postDate.getDate()} 日`;
     }
 }
