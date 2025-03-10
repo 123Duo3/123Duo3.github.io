@@ -65,6 +65,11 @@ var description = (page.excerpt || '这里什么都没有。').replace(/<\/?[^>]
 
   gtag('config', 'G-TPJQ9Y16KX');
 </script>
+<script src="//unpkg.com/heti/umd/heti-addon.min.js"></script>
+<script>
+  const heti = new Heti('.heti');
+  heti.autoSpacing();
+</script>
 
 <body>
 
@@ -90,7 +95,7 @@ var description = (page.excerpt || '这里什么都没有。').replace(/<\/?[^>]
       </a>
 
       <div class="post-title">
-        <% if (page.title != undefined) { %>
+        <% if (page.title != '404' && page.title != undefined) { %>
           <div style="padding-left:10px">
             <div style="height:64px"></div>
             <div>
@@ -115,7 +120,7 @@ var description = (page.excerpt || '这里什么都没有。').replace(/<\/?[^>]
     </div>
     <div class="header-buttons">
       <% let buttons; %>
-      <% if (page.title === undefined) { %>
+      <% if (page.title === undefined || page.title === '404') { %>
         <% buttons = [
           { icon: '&#xE8B6;', tooltip: '搜索', link: '/search' },
           { icon: '&#xF399;', tooltip: '归档', link: '/archives' },

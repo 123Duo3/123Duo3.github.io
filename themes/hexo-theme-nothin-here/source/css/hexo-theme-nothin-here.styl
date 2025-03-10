@@ -630,3 +630,15 @@ pre
     &.first
       display: inline-block
 
+.tips-404
+  margin-top: 30vh
+  margin-inline-start: -256px
+  z-index: 101
+  position: relative
+@media (max-height: 600px) 
+  .tips-404
+    margin-top: 25vh
+    margin-inline-start: calc(-256px + 64px)
+@media (max-width: 768px) 
+  .tips-404
+    margin-inline-start: 0
