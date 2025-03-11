@@ -4,7 +4,6 @@ window.addEventListener('wheel', function(event) {
             left: event.deltaY,
             behavior: 'auto'
         });
-        //event.preventDefault();
     }
 });
 
@@ -59,3 +58,18 @@ const formatDate = function formatDate(postDate) {
       return `${postDate.getFullYear()} 年 ${postDate.getMonth() + 1} 月 ${postDate.getDate()} 日`;
     }
 }
+
+
+function timeIn30() {
+  const now = new Date();
+  now.setHours(now.getUTCHours() + 8);
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  if (hours < 6) {
+    hours += 24;
+  }
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  document.getElementById('time-in-30').innerText = hours + ':' + minutes;
+}
+timeIn30()
+setInterval(timeIn30, 1000);

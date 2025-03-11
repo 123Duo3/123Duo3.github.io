@@ -1,0 +1,77 @@
+---
+title: 关于
+---
+
+<div class="about-page">
+    <div class="post-title-mobile" style="margin-inline: auto; width:24em;">
+        <div class="first-space"></div>
+        <div style="height:48px"></div>
+        <h1>关于</h1>
+        <div style="height:64px"></div>
+    </div>
+    <div class="about-item"> 
+        <div class="about-item-head">
+            <div>
+                <h1>123哆3</h1>
+                <div style="padding-top:4px;"></div>
+                <div class="text-meta" style="color: var(--color-tertiary)">有机废物。</div>
+            </div>
+            <img style="height: 64px; border-radius: 8px; -webkit-border-radius: 8; -moz-border-radius: 8" src="https://avatars.githubusercontent.com/u/12569997" alt="头像">
+        </div>
+        <div class="about-item-list"> 
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <span class="material-symbols-outlined-small">&#xE8B5</span>
+                <span style="margin-inline-start: 6px"></span>
+                <span style="color: var(--color-tertiary)">UTC+8, 三十小时制</span>
+            </div>
+            <div id="time-in-30"></div>
+        </div>
+        <a href="mailto:123duo3@gmail.com" class="about-item-list"> 
+            <span class="material-symbols-outlined-small">&#xE158</span>
+            <span>123duo3@gmail.com</span>
+        </a>
+        <a href="https://github.com/123Duo3" class="about-item-list"> 
+            <svg id="a" data-name="github_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path class="b" d="M11.82,2C6.19,2,1.64,6.58,1.64,12.25c0,4.53,2.92,8.37,6.96,9.73.51.1.69-.22.69-.49,0-.24-.02-1.05-.02-1.9-2.83.61-3.42-1.22-3.42-1.22-.45-1.19-1.13-1.49-1.13-1.49-.93-.63.07-.63.07-.63,1.03.07,1.57,1.05,1.57,1.05.91,1.56,2.38,1.12,2.97.85.08-.66.35-1.12.64-1.37-2.26-.24-4.63-1.12-4.63-5.06,0-1.12.4-2.04,1.04-2.75-.1-.25-.45-1.31.1-2.72,0,0,.86-.27,2.8,1.05.83-.22,1.69-.34,2.54-.34.86,0,1.74.12,2.54.34,1.94-1.32,2.8-1.05,2.8-1.05.56,1.41.2,2.46.1,2.72.66.71,1.04,1.63,1.04,2.75,0,3.94-2.38,4.8-4.65,5.06.37.32.69.93.69,1.9,0,1.37-.02,2.48-.02,2.82,0,.27.19.59.69.49,4.04-1.36,6.96-5.19,6.96-9.73.02-5.67-4.55-10.25-10.16-10.25Z"/>
+            </svg>
+            <span>@123Duo3</span>
+        </a>
+        <a href="https://t.me/nothin_here" class="about-item-list"> 
+            <svg id="a" data-name="telegram_icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path class="b" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10,10-4.48,10-10S17.52,2,12,2ZM16.64,8.8c-.15,1.58-.8,5.42-1.13,7.19-.14.75-.42,1-.68,1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15,2.71-2.48,2.76-2.69,0-.03.01-.12-.05-.18-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22,2.79-.4.27-.76.41-1.08.4-.36,0-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55,2.92-1.27,4.86-2.11,5.83-2.51,2.78-1.16,3.35-1.36,3.73-1.36.08,0,.27.02.39.12.1.08.13.19.14.27.01.08.03.26.02.39Z"/>
+            </svg>
+            <span>@nothin_here</span>
+        </a>
+    </div>
+    <div class="about-item"> 
+        <div class="about-item-head">
+            <h1>朋友们</h1>
+        </div>
+        <a href="https://nift4.org/" class="about-item-list"> 
+            <div>
+                Nick 
+                <br><span style="color: var(--color-tertiary)"> nift4.org/</span>
+            </div>
+            <img src="https://avatars.githubusercontent.com/u/36458596" style="height: 48px; border-radius: 8px; -webkit-border-radius: 8; -moz-border-radius: 8">
+        </a>
+        <a href="https://jyotiraditya.dev/" class="about-item-list"> 
+            <div>
+                Jyotiraditya Panda
+                <br><span style="color: var(--color-tertiary)"> jyotiraditya.dev/</span>
+            </div>
+            <img src="https://avatars.githubusercontent.com/u/81803340" style="height: 48px; border-radius: 8px; -webkit-border-radius: 8; -moz-border-radius: 8">
+        </a>
+    </div>
+    <div class="about-item"> 
+        <div class="about-item-head">
+            <h1>声明</h1>
+        </div>
+        <div style="margin-top:-0.5em">
+            <p>
+                版权所有 © 2025 123哆3。本站内的所有原创内容，除非另有声明，均采用Creative Commons 署名 - 非商业性使用 - 相同方式共享 4.0 国际许可协议（<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>）进行许可。
+            </p><p>
+                本站使用的字体有：MiSans、Inter 以及 JetBrains Mono。图标来自 Material Symbols。
+            </p>
+        </div>
+    </div>
+</div>
