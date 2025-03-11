@@ -193,12 +193,12 @@ blockquote footer cite
   font-style: normal
   font-weight: 500
   padding-inline-start: 0.5em
-  color: var(--color-secondary)
+  color: var(--color-tertiary)
 
 blockquote footer cite a
-  color: var(--color-secondary)
+  color: var(--color-tertiary)
   &:hover
-    color: var(--color)
+    color: var(--color-secondary)
   overflow-wrap: anywhere
 
 blockquote p a
@@ -617,9 +617,8 @@ pre
 .code-line
   margin-inline: -2px
   padding-inline: calc(2em + 2px)
-
-.code-line.marked
-  background: var(--horizontal-line)
+  &.marked
+    background: var(--stroke)
 
 @media (max-width: 768px) 
   .code-line
