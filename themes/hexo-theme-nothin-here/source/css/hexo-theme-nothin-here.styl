@@ -638,13 +638,14 @@ pre
 
 .about-page
   margin-top: 112.5px
-  display: flex
-  flex-direction: row
+  columns 24em auto
+  gap: 64px
+  height: calc(100vh - 48px - 112.5px - var(--scrollbar-height))
 
 .about-item
   width: 24em
   margin-inline: auto
-  padding-inline-end: 64px
+  min-height: calc(100vh - 112.5px - 48px - var(--scrollbar-height))
 
 .about-item-head
   display: flex
