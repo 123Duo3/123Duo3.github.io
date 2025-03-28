@@ -60,6 +60,11 @@
   font-style: italic
   font-weight: bold
 
+@font-face {
+  font-family: AnywayExtraVF;
+  src: url(../fonts/AnywayExtraVF.woff2) format("woff2");
+  font-style: normal;
+}
 
 
 body
@@ -67,7 +72,7 @@ body
   line-height: 1.5em
   color: var(--color)
   background-color: var(--background)
-  font-family: InterVariable, MiSans, system-ui, -apple-system, BlinkMacSystemFont, sans-serif
+  font-family: InterVariable, AnywayExtraVF, MiSans, system-ui, -apple-system, BlinkMacSystemFont, sans-serif
 @media (min-width: 768px) 
   body
     overflow-y: hidden
@@ -75,6 +80,7 @@ body
 
 p
   text-indent:2em
+  hanging-punctuation: allow-end
 
 h1 
   font-size: 2em
@@ -82,6 +88,7 @@ h1
   line-height: 1.25em
   margin: 0
   padding: 0
+  text-wrap: balance
 
 h2
   font-size: 2em
@@ -90,6 +97,7 @@ h2
   margin: 0
   margin-block-start: 1em
   margin-block-end: 0em
+  text-wrap: balance
 @media (max-width: 768px) 
   h1 
     font-weight: 400
