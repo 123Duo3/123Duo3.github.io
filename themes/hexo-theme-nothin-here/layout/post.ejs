@@ -66,11 +66,25 @@
       <a class="post-tag" href="<%=url_for(tag.path)%>">
         #<%= tag.name %><br>
       </a>
+    <% }); %>
+    <% if (page.author) { %>
+      <span>文 / <%= page.author %></span>
+    <% } else if (page.authors && page.authors.length > 0) { %>
+      <span>文 / <% page.authors.forEach((author, index) => { %>
+      <%= author %><%= index < page.authors.length - 2 ? '、' : (index === page.authors.length - 2 ? ' 与 ' : '') %>
       <% }); %>
-        <span>文 / <%=config.author%></span>
+      </span>
+    <% } else { %>
+      <span>文 / <%= config.author %></span>
+    <% } %>
+    <% if (page.collaborator) { %>
+      <span>协 / <%=page.collaborator%></span>
+    <% } %>
+    <% if (page.collaborators && page.collaborators.length > 0) { %>
+      <span>协 / <% page.collaborators.forEach((collaborator, index) => { %>
+      <%= collaborator %><%= index < page.collaborators.length - 2 ? '、' : (index === page.collaborators.length - 2 ? ' 与 ' : '') %>
+      <% }); %>
+      </span>
+    <% } %>
   </div>
 </article>
-
-<div id="paginator">
-  <%-paginator()%>
-</div>
