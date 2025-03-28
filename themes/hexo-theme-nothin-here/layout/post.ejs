@@ -68,14 +68,14 @@
       </a>
     <% }); %>
     <% if (page.author) { %>
-      <span>文 / <%= page.author %></span>
+      <span class="article-author">文 / <%= page.author %></span>
     <% } else if (page.authors && page.authors.length > 0) { %>
-      <span>文 / <% page.authors.forEach((author, index) => { %>
+      <span class="article-author">文 / <% page.authors.forEach((author, index) => { %>
       <%= author %><%= index < page.authors.length - 2 ? '、' : (index === page.authors.length - 2 ? ' 与 ' : '') %>
       <% }); %>
       </span>
     <% } else { %>
-      <span>文 / <%= config.author %></span>
+      <span class="article-author">文 / <%= config.author %></span>
     <% } %>
     <% if (page.collaborator) { %>
       <span>协 / <%=page.collaborator%></span>
