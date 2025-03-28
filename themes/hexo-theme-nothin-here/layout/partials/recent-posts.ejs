@@ -39,6 +39,11 @@ function calcReadingTime(articleBody) {
     <% page.posts.sort('date', -1).limit(100).each(post => { %>
       <a class="recent-post-item" href="<%=url_for(post.path)%>">
         <div class="recent-post-item-upper">
+          <% if (post.cover) { %>
+            <div class="recent-post-item-cover">
+              <img src="<%=url_for(post.path) + post.cover%>" alt="文章封面">
+            </div>
+          <% } %>
           <div class = "recent-post-item-text">
             <h2><%=post.title%></h2>
           </div>
