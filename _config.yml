@@ -43,6 +43,32 @@ render_drafts: false
 post_asset_folder: true
 relative_link: true
 future: true
+markdown:
+  preset: 'default'
+  render:
+    html: true
+    xhtmlOut: false
+    langPrefix: 'language-'
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  enable_rules:
+  disable_rules:
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: false
+    permalinkClass: 'header-anchor'
+    permalinkSide: 'left'
+    permalinkSymbol: '¶'
+    case: 0
+    separator: '-'
+  images:
+    lazyload: false
+    prepend_root: false
+    post_asset: false
+  inline: false  # https://markdown-it.github.io/markdown-it/#MarkdownIt.renderInline
 syntax_highlighter: highlight.js
 highlight:
   line_number: false
@@ -54,6 +80,14 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+math:
+  katex:
+    css: './css/katex.min.css'
+    options:
+      throwOnError: false
+      felqn: true
+      minRuleThickness: 0.05
+      displayMode: true
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
