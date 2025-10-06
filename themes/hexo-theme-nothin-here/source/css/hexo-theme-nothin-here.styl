@@ -81,6 +81,10 @@ body
 p
   text-indent:2em
   hanging-punctuation: allow-end
+  font-variant-ligatures: contextual;
+  font-feature-settings: "calt";
+  -moz-font-feature-settings: "calt";
+  -webkit-font-feature-settings: "calt";
 
 h1 
   font-size: 2em
@@ -673,20 +677,24 @@ pre
 
 .about-page
   margin-top: 112.5px
-  columns 24em auto
-  gap: 64px
-  height: calc(100vh - 48px - 112.5px - var(--scrollbar-height))
+  display: flex
+  flex-direction: row
+  max-height: calc(100vh - 112.5px - 48px)
 
 .about-item
-  width: 24em
   margin-inline: auto
-  min-height: calc(100vh - 112.5px - 48px - var(--scrollbar-height))
+  padding-inline-end: 64px
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+
 
 .about-item-head
   display: flex
   flex-direction: row
   justify-content: space-between
   height 128px
+  width: 24em
 
 .about-item-list
   display: flex
@@ -696,10 +704,14 @@ pre
   margin-inline: -1em
   padding-inline: 1em
   padding-block: 0.5em
-  font-weight: 500
   border-radius: 8px
   -webkit-border-radius: 8
   -moz-border-radius: 8
+  width: 24em
+
+.about-item-list .material-symbols-outlined-small
+  font-variation-settings:
+    'wght' 400
 
 a.about-item-list
   text-decoration: none
@@ -720,3 +732,4 @@ a.about-item-list
     padding-inline-end: 0
     min-height: 0
     padding-bottom: 48px
+
