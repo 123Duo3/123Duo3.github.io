@@ -31,7 +31,7 @@ categories:
 那么，在上述的情况下，贝塞尔曲线可以被简化为：
 
 ![\mathbf{B}(t) = 3t(1-t)^2\mathbf{P}_1 + 3t^2(1-t) \mathbf{P}_2+t^3, t \in [0,1]](formula_2.svg)
-譬如，在 [Accord](https://github.com/AkaneFoundation/Accord/) 中，歌词滚动使用的曲线是 `PathInterpolator(0.4f, 0.2f, 0f, 1f)`，那么其方程为：
+譬如，在 [Accord](https://github.com/FoedusProgramme/AccordLegacy/) 中，歌词滚动使用的曲线是 `PathInterpolator(0.4f, 0.2f, 0f, 1f)`，那么其方程为：
 
 ![\left\{\begin{array}{**lr**}x = 3t(1-t)^2\cdot 0.4 + t^3 \\y = 3t(1-t)^2\cdot 0.2 + 3t^2(1-t) + t^3\end{array}\right.& , t \in [0,1]](formula_3.svg)
 
@@ -73,6 +73,6 @@ categories:
 
 ## 结尾
 
-如果你想要一个现有的示例代码，[可以到这里看看](https://github.com/AkaneFoundation/Accord/blob/fb5df5ff20c96eb782b6a7aec25d10ffe3c4c73a/app/src/main/java/org/akanework/gramophone/ui/components/FullBottomSheet.kt#L1138)，喜欢的话可以点个 Star。
+如果你想要一个现有的示例代码，[可以到这里看看](https://github.com/FoedusProgramme/AccordLegacy/blob/fb5df5ff20c96eb782b6a7aec25d10ffe3c4c73a/app/src/main/java/org/akanework/gramophone/ui/components/FullBottomSheet.kt#L1138)，喜欢的话可以点个 Star。
 
 如果你对如何使用 LinearSmoothScroller 让 RecyclerView 实现更平滑的滚动感兴趣，欢迎看看这篇文章的[上一篇](https://juejin.cn/post/7363932520952512512)，没有数学公式。
